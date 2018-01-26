@@ -63,18 +63,19 @@
   // alert('You are not old enough...');
 // }
 
-var userAge = confirm('Are you over 18?');
+// var userAge = confirm('Are you over 18?');
 
-if(userAge == true) {
-  under80 = confirm('Are you under 80 yeasrs old?');
-  if(under80) {
-    var starWars = confirm("Do you like star wars?");
-    if(starWars) {
-      alert('you rock!');
-      }
-} else {
-  confirm('Do you like prunes?');
-  }
-} else {
-  alert('You are not old enough...');
-}
+// if(userAge == true) {
+  // under80 = confirm('Are you under 80 yeasrs old?');
+  // if(under80) {
+    // var starWars = confirm("Do you like star wars?");
+    // if(starWars) {
+      // alert('you rock!');
+      // }
+// } else {
+  // confirm('Do you like prunes?');
+  // }
+// } else {
+  // alert('You are not old enough...');
+// }
+// end JS day 3
