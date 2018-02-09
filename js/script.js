@@ -121,3 +121,41 @@
 //     lifeTime = calcLifetimeSupply(age, daily);
 //   }
 // }
+//DAY 6
+
+//Day 7
+var h1 = document.createElement("h1");
+var p = document.createElement('p');// append a p tag
+var body = document.querySelector("body");
+//how you put the writing inside of it...
+h1.innerHTML = "hello world";
+//how do we add it to the body tag---add in the body tag above. ONLY EVER ONE body tag
+
+body.appendChild(h1); //h1 is not a string because it is a variable var h1
+p.textContent = "whoa!!!";
+
+body.appendChild(h1);
+body.appendChild(p);
+//create new element
+var newDiv = document.createElement("div");
+//style new element by color and height
+newDiv.style.backgroundColor = "green";
+newDiv.style.height = "120px";
+//not added until this line
+body.insertBefore(newDiv, p);
+
+//us predefined classes and add or remove id's
+
+//body.className = "red-background";
+//in order to access the classes now..
+myDiv.addEventListener('click', () => {
+ body.classList.toggle('red-background');
+ body.classList.replace("white-text", "purple-text");
+});
+//important that it returns a boolean...
+body.classList.contains("white-text")
+
+var newImg = document.createElement("img")//insert name of
+newImg.setAttribute("src", "https://www.amazon.com/Flamingo-Watercolor-Art-DJ-Rogers/dp/B013TXO84S"); //2 arguments
+
+body.appendChild(newImg);
