@@ -124,38 +124,106 @@
 //DAY 6
 
 //Day 7
-var h1 = document.createElement("h1");
-var p = document.createElement('p');// append a p tag
-var body = document.querySelector("body");
-//how you put the writing inside of it...
-h1.innerHTML = "hello world";
-//how do we add it to the body tag---add in the body tag above. ONLY EVER ONE body tag
+// var h1 = document.createElement("h1");
+// var p = document.createElement('p');// append a p tag
+// var body = document.querySelector("body");
+// //how you put the writing inside of it...
+// h1.innerHTML = "hello world";
+// //how do we add it to the body tag---add in the body tag above. ONLY EVER ONE body tag
+//
+// body.appendChild(h1); //h1 is not a string because it is a variable var h1
+// p.textContent = "whoa!!!";
+//
+// body.appendChild(h1);
+// body.appendChild(p);
+// //create new element
+// var newDiv = document.createElement("div");
+// //style new element by color and height
+// newDiv.style.backgroundColor = "green";
+// newDiv.style.height = "120px";
+// //not added until this line
+// body.insertBefore(newDiv, p);
+//
+// //us predefined classes and add or remove id's
+//
+// //body.className = "red-background";
+// //in order to access the classes now..
+// myDiv.addEventListener('click', () => {
+//  body.classList.toggle('red-background');
+//  body.classList.replace("white-text", "purple-text");
+// });
+// //important that it returns a boolean...
+// body.classList.contains("white-text")
+//
+// var newImg = document.createElement("img")//insert name of
+// newImg.setAttribute("src", "https://www.amazon.com/Flamingo-Watercolor-Art-DJ-Rogers/dp/B013TXO84S"); //2 arguments
+//
+// body.appendChild(newImg);
 
-body.appendChild(h1); //h1 is not a string because it is a variable var h1
-p.textContent = "whoa!!!";
+//DAY 7 Cont...@FIZZBUZZ TEST:
+//to count..need an incrementor
+// for (let i = 0; i <= 100; i++) {
+//   if(i % 3 === 0 && i % 5 === 0) {//if i is a multiple of 3
+//     console.log('FizzBuzz');
+//   } else if(i % 3 === 0) {
+//     console.log(Fizz);//define your logic - what represents your number?
+//   } else if(i % 5 === 0); {
+//     console.log('Buzz');
+//   }
+//DAY 7 TAKE HOME... FORMS:
+// input:number = input type/name/id
+//  <form action> //wrap input in forms, formmethod (contact forms, surveys, reset password, )
+  // action attribute <form action="post">
+// const orderForm = document.forms.order;
+//
+// console.log(orderForm.quantity.value);
 
-body.appendChild(h1);
-body.appendChild(p);
-//create new element
-var newDiv = document.createElement("div");
-//style new element by color and height
-newDiv.style.backgroundColor = "green";
-newDiv.style.height = "120px";
-//not added until this line
-body.insertBefore(newDiv, p);
+//attach event listener..
+// const orderForm = document.forms.order;
+//
+// var submitBtn = orderForm.submit;
+//
+// document.addEventListener('submit', function(e) {
+//   e.preventDefault();
+//   if(orderForm.quantity.value == null) {
+//     //how many times they click it
+//     //
+//   }
+//   //validation/varification
+// })
 
-//us predefined classes and add or remove id's
+//WHAT IS THIS???
+// var checkScope = function() {
+//   console.log(this);
+// }
+//this. refers to the window - it was not bound to a function scope
+//allows you to perform closure
+//defined by the way the its called
+// var name = 'Peter';
+//changed name to global
+// function wrapLog() {
+//   logThis();
+// }
 
-//body.className = "red-background";
-//in order to access the classes now..
-myDiv.addEventListener('click', () => {
- body.classList.toggle('red-background');
- body.classList.replace("white-text", "purple-text");
-});
-//important that it returns a boolean...
-body.classList.contains("white-text")
+// wrapLog();
+//no matter what - if you console.log this without changing context, it will always refer back to the window
+//trying to seperate your code of functions
+// var obj = { //creating an object
+  // a: checkScope //creating a key a's value is checkScope
+// } //the checkScopemust be called (as it is below in obj.a)
 
-var newImg = document.createElement("img")//insert name of
-newImg.setAttribute("src", "https://www.amazon.com/Flamingo-Watercolor-Art-DJ-Rogers/dp/B013TXO84S"); //2 arguments
+// obj.a(); //trying to see what is this in that checkScope
+//because it it set to a function
+//-implicet binding-
+//only applys to object
+//this binding will last only as long as you are calling a function like THIS
 
-body.appendChild(newImg);
+var checkScope = function() {
+  console.log(this);
+}
+
+var name = 'Peter';
+var obj = { //creating an object
+  a: checkScope //creating a key a's value is checkScope
+}
+obj.a();
