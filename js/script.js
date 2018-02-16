@@ -216,14 +216,149 @@
 //because it it set to a function
 //-implicet binding-
 //only applys to object
-//this binding will last only as long as you are calling a function like THIS
+// //this binding will last only as long as you are calling a function like THIS
+//
+// var checkScope = function() {
+//   console.log(this);
+// }
+//
+// var name = 'Peter';
+// var obj = { //creating an object
+//   a: checkScope //creating a key a's value is checkScope
+// }
+// obj.a();
+// YOU DONT KNOW JS for free on GITHUB - check it
+//3 ways to bind - know these!
+//methods that get called
+//default, explicit, implicit
 
-var checkScope = function() {
-  console.log(this);
-}
+//SCOPE
+//this and scope are not the same thing, this has to obey scopes rules
+//scope doesnt have to follow this rules
+//SCOPE where you functions and variables live, namespace
+// var me = 'Ryeker';
+//
+// function logMe() {
+//   var me = "jonathon";
+//   console.log(me);
+// }
+//
+// console.log(me);
+// //const
+// const me = 'Ryeker';
+//
+// function logMe() {
+//   const me = "jonathon";
+//   console.log(me);
+// }
 
-var name = 'Peter';
-var obj = { //creating an object
-  a: checkScope //creating a key a's value is checkScope
+// console.log(me); //its going to look in the global scope for this variable(me)
+
+
+//Custom object
+//primitive - are the only things that are not object
+//string, boolean, number can be created as an object version
+
+//function, methods, strings are objects
+
+//everything you make in JS, has a prototype/blueprint,
+// //newString - use the rules for string method using your value (hello world)
+// var myString = new String('Hello World')
+// console.log(Object.getPrototypeOf(myString));
+//use the rules of the object, then tell me the prototype of the string is
+//different from classical inheritence
+
+
+//DAY 9 cont..
+
+//OBJECTS
+// . notation,
+// usually prefered and faster.
+// cannot always be used when there are numbers as keys
+// var admin = {     in admin what is the key for peter =
+//  username: 'peter'
+//  password: 'superjbsdfj'
+//  date: newDate(01/01/2011)
+//};
+//  console.log(admin.password)
+//---whatever keu name is will be .password
+// bracket notation
+//---whatever key name is, has to be in brackets
+// var product = {
+//  name: 'soap'
+//  price: "$10.99"
+//  notes: "Great for cleaning"
+//};
+// to gather all the data in an array - use a loop
+// example of a loop: i is your controller, incriments by 1 (i++), will stop at the length of the data becuase it says data.length
+// let i = 0;
+// do{
+//  console.log(data[i].notes);
+//  i++;
+// }while(i < data.length);
+// a loop need a place to start, jumping incriments, and a place to end
+//javascript inheritance, constructor member of a prototype will always tell you the function
+// constructor is something that can be used over and over
+// in console log look for proto and you can see what kind of prototype it is
+// var myObj = {          //prototype
+//   firstName: 'Danielle' //key =firstName object='Danielle'
+//   lastName: 'Handler'
+// }
+// function Name(first, last) { //define the function for the user
+//   this.first = first;  //defining placeholders, that get passed in, in order of function line
+//   this.last = last;  //defining
+// };
+// let newPerson = new Name("Danielle", "Handler"); //writing the constructor function call
+// console.log(newPerson);
+
+// constructor function (above)
+// singleton = each let (newPerson) or (otherPerson)
+
+
+
+//for a form first make a click eventListener to the submit button or..
+
+var newUserForm = document.forms.newUser;
+newUserForm.addEventListener("submit", function(e) {
+  login(e);
+}) //can only be used in a form
+//submit is an arguement for eventlistener
+//login enter the e to pass in the event to stop it from submitting..
+//whatever is called has to match the event below in the function (e)
+document.querySelector(".newUser");
+
+function User(a, b){
+  this.username = a;
+  this.password = b;
 }
-obj.a();
+//var user = []; //this is used to make an array of saved users
+
+function login(e) {
+  e.preventDefault();
+  var username = document.querySelector('.username').value;  //could use querySelector
+  //above line give you what the user typed in
+  // if you are getting null, you are not getting what the value is, .value would be missing
+  var password = newUserForm.password.value; //gives you what the user entered
+  var newUser = new User(username, password);
+  //return newUser; //doing return will call the answer
+  console.log(newUser);
+}
+//if you see new it makes a 
+//an object made from an obect of another function
+//function Vehicle(wheels,type, engine, color) {   //function Vehile (this is the constructor function)
+// this.wheels = wheels;
+// this.type = type;
+// this.engine = engine;
+// this.color = color;
+// }
+//function Engine(numCyls, injSys, vRooms, horsees) {
+// this.numCyls = numCyls;
+// this.injSys = injSys;
+//this.vRooms = vRooms;
+//this.horsees = horsees;
+}
+//make a reference to engine to pass into vehicle
+//var myEngine = new Engine(2, 'crap', 0.00, "???");
+//make a reference for vehicle
+//var myVehicle = new Vehicle(4, 'car', meEngine, "faded gret");
+//console.log(saturn);
